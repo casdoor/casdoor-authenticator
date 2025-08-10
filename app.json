@@ -2,7 +2,7 @@
   "expo": {
     "name": "Casdoor",
     "slug": "casdoor-authenticator",
-    "version": "1.22.0",
+    "version": "1.23.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -22,7 +22,7 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "org.casdoor.casdoorapp",
-      "buildNumber": "1.22.0"
+      "buildNumber": "1.23.0"
     },
     "android": {
       "adaptiveIcon": {
@@ -30,7 +30,7 @@
         "backgroundColor": "#ffffff"
       },
       "package": "org.casdoor.casdoorapp",
-      "versionCode": 520012200
+      "versionCode": 520012300
     },
     "web": {
       "favicon": "./assets/favicon.png"
