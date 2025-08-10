@@ -30,11 +30,12 @@ const ItemDetailPage = ({route}) => {
 
   const {token, timeRemaining} = useTokenRefresh(item.secretKey);
 
-  const copyToClipboard = async(text) => {
-    await Clipboard.setStringAsync(text);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
+const copyToClipboard = async(text) => {
+  const textWithoutSpaces = text.replace(/\s/g, '');
+  await Clipboard.setStringAsync(textWithoutSpaces);
+  setCopied(true);
+  setTimeout(() => setCopied(false), 2000);
+};
 
   return (
     <SafeAreaView style={{flex: 1}}>
