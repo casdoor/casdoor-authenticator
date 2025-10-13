@@ -11,9 +11,10 @@ Casdoor Authenticator App is a mobile application for iOS and Android that provi
 
 ## Features
 
-- [x] Multi-platform support (iOS/Android)
+- [x] Multi-platform support (iOS/Android/Web)
 - [x] TOTP-based multi-factor authentication
 - [x] Account synchronization with Casdoor
+- [x] Web deployment via GitHub Pages
 - [ ] Integration with Casdoor's central service and desktop client
 
 ## Quick Start
@@ -26,9 +27,10 @@ npm install && npm run start
 
 ## Installation
 
-You can download the latest version of the Casdoor Authenticator App from the GitHub Releases page.
+You can use the Casdoor Authenticator App in multiple ways:
 
-- Android: Download and install the APK file directly on your device.
+- **Web**: Access the web version at https://casdoor.github.io/casdoor-authenticator (automatically deployed from master branch)
+- **Android**: Download and install the APK file directly on your device from the GitHub Releases page
 
 ### Building from Source
 
@@ -42,14 +44,23 @@ cd casdoor-authenticator
 npm install
 ```
 
-### android build
+### Android build
 
-  ```bash
-  npm install && npx expo prebuild --platform android
-  cd android && ./gradlew assembleRelease
-  ```
+```bash
+npm install && npx expo prebuild --platform android
+cd android && ./gradlew assembleRelease
+```
 
-  The APK file in the `app/build/outputs/apk/release/` directory.
+The APK file in the `app/build/outputs/apk/release/` directory.
+
+### Web build
+
+```bash
+npm install
+npm run export:web
+```
+
+The web build will be output to the `dist/` directory.
 
 Note: You'll need to have the necessary development environments set up for React Native, Android. Refer to the React Native documentation for detailed setup instructions.
 
