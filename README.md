@@ -1,13 +1,14 @@
 # Casdoor Authenticator App
 
 [![GitHub Actions](https://github.com/casdoor/casdoor-authenticator/actions/workflows/release.yml/badge.svg)](https://github.com/casdoor/casdoor-authenticator/actions/workflows/release.yml)
+[![Deploy to GitHub Pages](https://github.com/casdoor/casdoor-authenticator/actions/workflows/deploy-web.yml/badge.svg)](https://github.com/casdoor/casdoor-authenticator/actions/workflows/deploy-web.yml)
 [![Release](https://img.shields.io/github/release/casdoor/casdoor-authenticator.svg)](https://github.com/casdoor/casdoor-authenticator/releases/latest)
 [![GitHub issues](https://img.shields.io/github/issues/casdoor/casdoor-authenticator?style=flat-square)](https://github.com/casdoor/casdoor-authenticator/issues)
 [![GitHub forks](https://img.shields.io/github/forks/casdoor/casdoor-authenticator?style=flat-square)](https://github.com/casdoor/casdoor-authenticator/network)
 [![License](https://img.shields.io/github/license/casdoor/casdoor-authenticator?style=flat-square)](https://github.com/casdoor/casdoor-authenticator/blob/master/LICENSE)
 [![Discord](https://img.shields.io/discord/1022748306096537660?logo=discord&label=discord&color=5865F2)](https://discord.gg/5rPsrAzK7S)
 
-Casdoor Authenticator App is a mobile application for iOS and Android that provides multi-factor authentication using the TOTP protocol. This app helps secure user accounts by generating time-based one-time passwords (TOTP). The app is developed using the React Native framework.
+Casdoor Authenticator App is a cross-platform application for iOS, Android, and Web that provides multi-factor authentication using the TOTP protocol. This app helps secure user accounts by generating time-based one-time passwords (TOTP). The app is developed using React Native with Expo.
 
 ## Features
 
