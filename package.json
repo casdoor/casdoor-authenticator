@@ -7,11 +7,13 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
+    "export:web": "expo export --platform web",
     "release": "npx -p semantic-release-expo -p semantic-release -p @semantic-release/git -p @semantic-release/changelog -p @semantic-release/exec semantic-release"
   },
   "dependencies": {
     "@expo-google-fonts/lato": "^0.2.3",
     "@expo-google-fonts/roboto": "^0.2.3",
+    "@expo/metro-runtime": "~4.0.0",
     "@expo/react-native-action-sheet": "^4.1.0",
     "@expo/vector-icons": "^14.0.2",
     "@react-native-async-storage/async-storage": "1.23.1",
@@ -66,7 +68,8 @@
     "react-native-web": "~0.19.13",
     "react-native-webview": "13.12.5",
     "totp-generator": "^0.0.14",
-    "zustand": "^4.5.4"
+    "zustand": "^4.5.4",
+    "@expo/metro-runtime": "~4.0.0"
   },
   "verifyConditions": [
     "semantic-release-expo",
