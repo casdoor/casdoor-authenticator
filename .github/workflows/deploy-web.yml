@@ -34,6 +34,12 @@ jobs:
       - name: Export web app
         run: npm run export:web -- --output-dir dist
 
+      - name: Fix paths for GitHub Pages subdirectory
+        run: |
+          # Fix absolute paths in index.html to be relative to /casdoor-authenticator
+          sed -i 's|href="/favicon.ico"|href="/casdoor-authenticator/favicon.ico"|g' dist/index.html
+          sed -i 's|src="/_expo/|src="/casdoor-authenticator/_expo/|g' dist/index.html
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
