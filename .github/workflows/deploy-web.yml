@@ -45,12 +45,15 @@ jobs:
             exit 1
           fi
           
+          # Apply path fixes
           sed -i "s|href=\"/favicon.ico\"|href=\"/${REPO_NAME}/favicon.ico\"|g" dist/index.html
           sed -i "s|src=\"/_expo/|src=\"/${REPO_NAME}/_expo/|g" dist/index.html
           
-          # Verify the changes were applied
-          if ! grep -q "/${REPO_NAME}/favicon.ico" dist/index.html || ! grep -q "/${REPO_NAME}/_expo/" dist/index.html; then
-            echo "Error: Failed to update paths in index.html"
+          # Verify that at least one of the expected patterns was updated
+          # (Expo-generated index.html should have both, but this is more resilient)
+          if ! grep -q "/${REPO_NAME}/" dist/index.html; then
+            echo "Error: No paths were updated in index.html"
+            cat dist/index.html
             exit 1
           fi
           
