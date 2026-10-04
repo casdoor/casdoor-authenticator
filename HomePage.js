@@ -38,6 +38,7 @@ import {useImportManager} from "./ImportManager";
 import useStore from "./useStorage";
 import {useTokenRefresh, validateSecret} from "./totpUtil";
 import {useAccountSync, useAccounts, useEditAccount} from "./useAccountStore";
+import {completeWebLogin} from "./webLogin";
 
 const {width, height} = Dimensions.get("window");
 const REFRESH_INTERVAL = 10000;
@@ -82,6 +83,29 @@ export default function HomePage() {
   useEffect(() => {
     setCanSync(Boolean(isConnected && userInfo && serverUrl));
   }, [isConnected, userInfo, serverUrl]);
+
+  // on the web, finish the login when Casdoor redirects back to the app
+  useEffect(() => {
+    const finishWebLogin = async() => {
+      // the persisted store loads asynchronously and would overwrite a token set before it
+      if (!useStore.persist.hasHydrated()) {
+        await new Promise((resolve) => useStore.persist.onFinishHydration(resolve));
+      }
+      const result = await completeWebLogin();
+      if (result) {
+        const {setCasdoorConfig, setToken, setUserInfo} = useStore.getState();
+        setCasdoorConfig(result.config);
+        setToken(result.token);
+        setUserInfo(result.userInfo);
+        notify("success", {
+          params: {title: t("common.success"), description: t("casdoorLoginPage.Logged in successfully!")},
+        });
+      }
+    };
+    finishWebLogin().catch((error) => {
+      notify("error", {params: {title: t("common.error"), description: error.message}});
+    });
+  }, []);
 
   useEffect(() => {
     setFilteredData(accounts);

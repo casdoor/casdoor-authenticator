@@ -16,8 +16,7 @@
     },
     "casdoorLoginPage": {
       "Logged in successfully!": "Успешный вход!",
-      "Back to Config": "Назад к настройкам",
-      "Signing in to a server is not available in the web version yet. Use the QR code login or the Android/iOS app.": "Вход на сервер пока недоступен в веб-версии. Используйте вход по QR-коду или приложение для Android/iOS."
+      "Back to Config": "Назад к настройкам"
     },
     "editAccount": {
       "Enter new account name": "Введите новое имя аккаунта",

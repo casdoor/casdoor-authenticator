@@ -16,8 +16,7 @@
   },
   "casdoorLoginPage": {
     "Logged in successfully!": "ログインに成功しました！",
-    "Back to Config": "設定に戻る",
-    "Signing in to a server is not available in the web version yet. Use the QR code login or the Android/iOS app.": "Web 版ではまだサーバーへのログインができません。QR コードでのログインか Android/iOS アプリをご利用ください。"
+    "Back to Config": "設定に戻る"
   },
   "editAccount": {
     "Enter new account name": "新しいアカウント名を入力してください",

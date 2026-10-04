@@ -16,8 +16,7 @@
     },
     "casdoorLoginPage": {
       "Logged in successfully!": "เข้าสู่ระบบสำเร็จ!",
-      "Back to Config": "กลับไปที่การตั้งค่า",
-      "Signing in to a server is not available in the web version yet. Use the QR code login or the Android/iOS app.": "เวอร์ชันเว็บยังไม่รองรับการเข้าสู่ระบบเซิร์ฟเวอร์ โปรดใช้การเข้าสู่ระบบด้วย QR code หรือแอป Android/iOS"
+      "Back to Config": "กลับไปที่การตั้งค่า"
     },
     "editAccount": {
       "Enter new account name": "กรอกชื่อบัญชีใหม่",

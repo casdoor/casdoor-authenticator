@@ -16,8 +16,7 @@
   },
   "casdoorLoginPage": {
     "Logged in successfully!": "登录成功！",
-    "Back to Config": "返回配置",
-    "Signing in to a server is not available in the web version yet. Use the QR code login or the Android/iOS app.": "网页版暂不支持登录服务器，请使用扫码登录或 Android/iOS App。"
+    "Back to Config": "返回配置"
   },
   "editAccount": {
     "Enter new account name": "输入新账户名称",

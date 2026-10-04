@@ -30,7 +30,7 @@ npm install && npm run start
 
 You can use the Casdoor Authenticator App in multiple ways:
 
-- **Web**: Access the web version at https://casdoor.ai/casdoor-authenticator/ (automatically deployed from master branch). Accounts are stored in the browser; signing in to a Casdoor server isn't available on the web yet, use the QR code login or the mobile app for that
+- **Web**: Access the web version at https://casdoor.ai/casdoor-authenticator/ (automatically deployed from master branch). Accounts are stored in the browser. To sign in to your Casdoor server from the web version, add `https://casdoor.ai/casdoor-authenticator/` to the Redirect URLs of the Casdoor application
 - **Android**: Download and install the APK file directly on your device from the GitHub Releases page
 
 ### Building from Source
