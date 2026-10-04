@@ -8,7 +8,7 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "export:web": "expo export --platform web",
-    "release": "npx -p semantic-release-expo -p semantic-release -p @semantic-release/git -p @semantic-release/changelog -p @semantic-release/exec semantic-release"
+    "release": "npx -p semantic-release-expo -p semantic-release -p @semantic-release/exec semantic-release"
   },
   "dependencies": {
     "@expo-google-fonts/lato": "^0.2.3",
@@ -71,11 +71,6 @@
     "zustand": "^4.5.4",
     "@expo/metro-runtime": "~4.0.0"
   },
-  "verifyConditions": [
-    "semantic-release-expo",
-    "@semantic-release/changelog",
-    "@semantic-release/git"
-  ],
   "release": {
     "branches": [
       "master"
@@ -94,14 +89,9 @@
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
       [
-        "@semantic-release/git",
+        "@semantic-release/exec",
         {
-          "assets": [
-            "package.json",
-            "package-lock.json",
-            "app.json"
-          ],
-          "message": "chore(release): ${nextRelease.version} [skip ci]"
+          "prepareCmd": "npx expo prebuild --platform android && cd android && ./gradlew assembleRelease && mkdir -p ../release/android && cp app/build/outputs/apk/release/app-release.apk ../release/android/casdoor-authenticator.apk"
         }
       ],
       [
