@@ -48,6 +48,11 @@ jobs:
   semantic-release:
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
+    # Releases take ~15 min to build the APK; queue them so a later push
+    # sees the previous tag instead of computing the same version again
+    concurrency:
+      group: semantic-release
+      cancel-in-progress: false
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
