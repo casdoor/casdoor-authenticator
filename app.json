@@ -35,6 +35,9 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
+    "experiments": {
+      "baseUrl": "/casdoor-authenticator"
+    },
     "extra": {
       "eas": {
         "projectId": "c02d2dfe-dd43-46ff-8a3e-e384fbc95b1d"

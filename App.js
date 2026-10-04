@@ -23,7 +23,7 @@ import {PaperProvider} from "react-native-paper";
 import ContentLoader, {Circle, Rect} from "react-content-loader/native";
 import {ZoomInDownZoomOutUp, createNotifications} from "react-native-notificated";
 import {GestureHandlerRootView} from "react-native-gesture-handler";
-import {useMigrations} from "drizzle-orm/expo-sqlite/migrator";
+import {useMigrations} from "./db/migrator";
 import {ActionSheetProvider} from "@expo/react-native-action-sheet";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 

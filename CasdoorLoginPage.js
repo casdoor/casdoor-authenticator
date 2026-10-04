@@ -170,7 +170,13 @@ function CasdoorLoginPage({onWebviewClose, initialMethod}) {
           <TouchableOpacity style={styles.backButton} onPress={() => setCurrentView("config")}>
             <Text style={styles.backButtonText}>{t("casdoorLoginPage.Back to Config")}</Text>
           </TouchableOpacity>
-          <WebView
+          {/* react-native-webview has no web implementation, and the browser can't
+              catch the redirect to redirectPath the way the WebView does */}
+          {Platform.OS === "web" ? (
+            <Text style={styles.webNotice}>
+              {t("casdoorLoginPage.Signing in to a server is not available in the web version yet. Use the QR code login or the Android/iOS app.")}
+            </Text>
+          ) : <WebView
             source={{uri: casdoorLoginURL}}
             onNavigationStateChange={onNavigationStateChange}
             onError={({nativeEvent}) => {
@@ -185,7 +191,7 @@ function CasdoorLoginPage({onWebviewClose, initialMethod}) {
             style={styles.webview}
             mixedContentMode="always"
             javaScriptEnabled={true}
-          />
+          />}
         </SafeAreaView>
       ),
     };
@@ -208,6 +214,11 @@ const styles = StyleSheet.create({
   backButtonText: {
     color: "white",
     fontWeight: "bold",
+  },
+  webNotice: {
+    padding: 20,
+    fontSize: 16,
+    textAlign: "center",
   },
   safeArea: {
     flex: 1,

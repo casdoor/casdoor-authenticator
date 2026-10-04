@@ -20,7 +20,7 @@ import {and, eq, isNull, not, or} from "drizzle-orm";
 import {create} from "zustand";
 import {generateToken} from "./totpUtil";
 import {syncWithCloud} from "./syncLogic";
-import {useLiveQuery} from "drizzle-orm/expo-sqlite";
+import {useLiveQuery} from "./db/liveQuery";
 
 export const useAccounts = () => {
   const {data: accounts} = useLiveQuery(

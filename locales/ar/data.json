@@ -16,7 +16,8 @@
     },
     "casdoorLoginPage": {
       "Logged in successfully!": "تم تسجيل الدخول بنجاح!",
-      "Back to Config": "العودة إلى الإعدادات"
+      "Back to Config": "العودة إلى الإعدادات",
+      "Signing in to a server is not available in the web version yet. Use the QR code login or the Android/iOS app.": "تسجيل الدخول إلى خادم غير متاح بعد في إصدار الويب. استخدم تسجيل الدخول برمز QR أو تطبيق Android/iOS."
     },
     "editAccount": {
       "Enter new account name": "أدخل اسم الحساب الجديد",

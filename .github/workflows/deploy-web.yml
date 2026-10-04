@@ -34,35 +34,6 @@ jobs:
       - name: Export web app
         run: npm run export:web -- --output-dir dist
 
-      - name: Fix paths for GitHub Pages subdirectory
-        run: |
-          # Extract repository name from GITHUB_REPOSITORY (format: owner/repo)
-          REPO_NAME="${GITHUB_REPOSITORY#*/}"
-          
-          # Fix absolute paths in index.html to include the repository name prefix
-          if [ ! -f dist/index.html ]; then
-            echo "Error: dist/index.html not found"
-            exit 1
-          fi
-          
-          # Apply path fixes
-          sed -i "s|href=\"/favicon.ico\"|href=\"/${REPO_NAME}/favicon.ico\"|g" dist/index.html
-          sed -i "s|src=\"/_expo/|src=\"/${REPO_NAME}/_expo/|g" dist/index.html
-          
-          # Verify that the specific patterns were updated correctly
-          if ! grep -q "href=\"/${REPO_NAME}/favicon.ico\"" dist/index.html; then
-            echo "Error: Failed to update favicon path in index.html"
-            cat dist/index.html
-            exit 1
-          fi
-          if ! grep -q "src=\"/${REPO_NAME}/_expo/" dist/index.html; then
-            echo "Error: Failed to update _expo path in index.html"
-            cat dist/index.html
-            exit 1
-          fi
-          
-          echo "Successfully updated paths for GitHub Pages deployment to /${REPO_NAME}"
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

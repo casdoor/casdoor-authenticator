@@ -16,7 +16,8 @@
     },
     "casdoorLoginPage": {
       "Logged in successfully!": "로그인에 성공했습니다!",
-      "Back to Config": "설정으로 돌아가기"
+      "Back to Config": "설정으로 돌아가기",
+      "Signing in to a server is not available in the web version yet. Use the QR code login or the Android/iOS app.": "웹 버전에서는 아직 서버 로그인을 지원하지 않습니다. QR 코드 로그인이나 Android/iOS 앱을 사용하세요."
     },
     "editAccount": {
       "Enter new account name": "새로운 계정 이름을 입력하세요",
